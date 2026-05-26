@@ -2,48 +2,92 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ item.title }}</title>
-
     <style>
-        body {
-            font-family: sans-serif;
-            background: #f8fafc;
-            padding: 40px;
+        body { 
+            background-color: #f8fafc; 
+            color: #0f172a; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            padding: 40px 20px; 
+            line-height: 1.6;
+            animation: fadeIn 0.4s ease-out;
         }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
+        .container { 
+            max-width: 780px; 
+            margin: 0 auto; 
+            background: #ffffff; 
+            border: 1px solid #e2e8f0; 
+            padding: 40px; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
         }
+        
+        .back-btn { 
+            display: inline-block; 
+            margin-bottom: 25px; 
+            color: #2563eb; 
+            text-decoration: none; 
+            font-size: 0.95rem; 
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+        .back-btn:hover { transform: translateX(-4px); }
 
-        a {
-            text-decoration: none;
-            color: #2563eb;
+        .category { 
+            color: #2563eb; 
+            font-weight: 700; 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            background: #eff6ff; 
+            padding: 4px 10px; 
+            border-radius: 4px; 
+            display: inline-block;
         }
+        
+        h1 { font-size: 2.2rem; font-weight: 800; margin: 15px 0; line-height: 1.25; color: #0f172a; }
+        .meta-info { font-size: 0.85rem; color: #64748b; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 30px; }
+        
+        .summary-box { 
+            background: #f1f5f9; 
+            border-left: 4px solid #2563eb; 
+            padding: 20px; 
+            margin-bottom: 30px; 
+            font-size: 1.05rem;
+            font-style: italic; 
+            color: #334155; 
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .main-text { font-size: 1.15rem; text-align: justify; color: #1e293b; white-space: pre-line; }
+        footer { margin-top: 5px; border-top: 1px solid #e2e8f0; padding-top: 20px; font-size: 0.85rem; color: #64748b; }
     </style>
 </head>
-
 <body>
 
-<div class="container">
+    <div class="container">
+        <a href="/" class="back-btn">← Torna alla prima pagina</a><br>
+        <div class="category">{{ item.category }}</div>
+        <h1>{{ item.title }}</h1>
+        
+        <div class="meta-info">
+            Archivio Digitale | Pubblicato il {{ item.date }} alle ore {{ item.time }} | Visualizzazioni: {{ item.views }}
+        </div>
 
-    <a href="/">← Indietro</a>
+        <div class="summary-box">
+            {{ item.summary }}
+        </div>
 
-    <h1>{{ item.title }}</h1>
+        <div class="main-text">
+            {{ item.content }}
+        </div>
 
-    <p><b>{{ item.category }}</b></p>
-
-    <p>{{ item.summary }}</p>
-
-    <hr>
-
-    <p>{{ item.content }}</p>
-
-</div>
+        <footer style="margin-top: 40px;">
+            Rapporto informativo interno #00{{ item.id }} - Riproduzione consentita citando la fonte Chrono Panel.
+        </footer>
+    </div>
 
 </body>
 </html>
