@@ -2,35 +2,35 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Stato Sistema</title>
+    <title>Telemetria</title>
+
     <style>
-        body { background-color: #f8fafc; color: #0f172a; font-family: monospace; padding: 40px; }
-        .panel { 
-            background: #ffffff; 
-            border: 1px solid #e2e8f0; 
-            padding: 30px; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-            max-width: 550px; 
-            margin: 0 auto; 
+        body { font-family: monospace; padding: 40px; background: #f8fafc; }
+
+        .box {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
         }
-        h2 { border-bottom: 2px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 20px; font-size: 1.2rem; }
-        p { margin-bottom: 14px; font-size: 0.95rem; color: #334155; }
-        .val { font-weight: bold; color: #2563eb; }
-        a { color: #2563eb; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px; }
-        a:hover { text-decoration: underline; }
     </style>
 </head>
+
 <body>
 
-    <div class="panel">
-        <h2>⚙️ Parametri della Piattaforma</h2>
-        <p>Stato Core Informazioni: <span class="val" style="color: #16a34a;">{{ metrics.server_status }}</span></p>
-        <p>Articoli caricati in RAM: <span class="val">{{ total_articles }} / 10</span></p>
-        <p>Richieste HTTP elaborate: <span class="val">{{ metrics.total_visits }}</span></p>
-        <p>Ciclo di caricamento automatico: <span class="val">Attivo (Nativo)</span></p>
-        <a href="/">← Ritorna all'Indice Notizie</a>
-    </div>
+<div class="box">
+
+    <h2>Sistema</h2>
+
+    <p>Status: {{ metrics.server_status }}</p>
+    <p>Articoli: {{ total_articles }}</p>
+    <p>Visite: {{ metrics.total_visits }}</p>
+
+    <a href="/">Torna</a>
+
+</div>
 
 </body>
 </html>
