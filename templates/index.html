@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHRONO PANEL | Giornale Libero</title>
+
     <style>
         :root {
             --bg: #f8fafc;
@@ -18,194 +19,149 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            background-color: var(--bg); 
-            color: var(--text-main); 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             padding: 20px;
-            animation: fadeInPage 0.6s ease-out;
         }
 
-        /* Animazione Caricamento Pagina */
-        @keyframes fadeInPage {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Header Elegante e Moderno */
-        header { 
+        header {
             background: var(--surface);
             border: 1px solid var(--border);
-            padding: 25px; 
+            padding: 25px;
             border-radius: 12px;
             margin-bottom: 20px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
-        .header-main { display: flex; justify-content: space-between; align-items: center; }
-        .header-main h1 { font-size: 2.2rem; font-weight: 800; color: var(--text-main); letter-spacing: -1px; }
-        .header-main h1 span { color: var(--primary); }
-        .tagline { font-size: 0.9rem; color: var(--text-muted); margin-top: 5px; font-weight: 500; }
 
-        /* Barra Navigazione con Micro-Animazioni */
-        nav { 
-            background: var(--surface); 
-            border: 1px solid var(--border); 
-            padding: 14px 20px; 
-            border-radius: 12px;
-            margin-bottom: 25px; 
-            display: flex; 
-            gap: 20px; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        nav a { 
-            color: var(--text-main); 
-            text-decoration: none; 
+
+        .header-main h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+        }
+
+        .header-main h1 span {
+            color: var(--primary);
+        }
+
+        nav {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 14px 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
             font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-            position: relative;
         }
-        nav a:hover { color: var(--primary); }
-        nav a::after {
-            content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0;
-            background-color: var(--primary); transition: width 0.2s ease;
-        }
-        nav a:hover::after { width: 100%; }
 
-        /* Griglia Editoriale ad Alto Impatto */
-        .main-grid { display: grid; grid-template-columns: 280px 1fr 300px; gap: 20px; }
-        @media (max-width: 1024px) { .main-grid { grid-template-columns: 1fr; } }
-
-        .column { background: var(--surface); border: 1px solid var(--border); padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
-        .column-title { font-size: 1.1rem; font-weight: 700; color: var(--text-main); border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
-
-        /* Cards Notizie con Effetto Hover e Animazione d'Ingresso */
-        .news-card { 
-            border-bottom: 1px solid var(--border); 
-            padding-bottom: 20px; 
-            margin-bottom: 20px;
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-            border-radius: 6px;
-            padding: 10px;
+        .main-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr 300px;
+            gap: 20px;
         }
-        .news-card:hover { 
-            transform: translateY(-4px); 
-            background: #f8fafc;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
-        }
-        .news-card:last-child { border-bottom: none; margin-bottom: 0; }
-        
-        .category-tag { 
-            font-size: 0.75rem; 
-            font-weight: 700; 
-            color: var(--primary); 
-            text-transform: uppercase; 
-            background: #eff6ff;
-            padding: 4px 8px;
-            border-radius: 4px;
-            display: inline-block; 
-            margin-bottom: 10px; 
-        }
-        .news-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; line-height: 1.3; }
-        .news-title a { color: var(--text-main); text-decoration: none; transition: color 0.2s; }
-        .news-title a:hover { color: var(--primary); }
-        
-        .news-summary { color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; margin-bottom: 12px; }
-        .news-meta { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
 
-        /* Sezione Ticker Ultim'Ora Animata */
+        .column {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .column-title {
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .news-card {
+            border-bottom: 1px solid var(--border);
+            padding: 10px 0;
+        }
+
+        .news-title a {
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
         .flash-box {
             background: var(--breaking-bg);
             border: 1px solid var(--breaking-border);
-            padding: 12px 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            animation: pulseAlert 2s infinite ease-in-out;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 6px;
         }
-        @keyframes pulseAlert {
-            0% { box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.2); }
-            70% { box-shadow: 0 0 0 6px rgba(244, 63, 94, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(244, 63, 94, 0); }
-        }
-        .flash-box a { color: #be123c; text-decoration: none; font-weight: 700; font-size: 0.9rem; }
-        .flash-box a:hover { text-decoration: underline; }
 
-        /* Widget Laterali Puliti */
-        .widget { background: #f8fafc; border: 1px solid var(--border); padding: 15px; border-radius: 8px; font-size: 0.9rem; margin-bottom: 15px; }
-        .status-badge { background: #dcfce7; color: #15803d; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; }
+        .status-badge {
+            background: #dcfce7;
+            color: #15803d;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
     </style>
-    <meta http-equiv="refresh" content="40">
 </head>
+
 <body>
 
-    <header>
-        <div class="header-main">
-            <h1>CHRONO<span>PANEL</span></h1>
-            <span class="status-badge">Aggiornato Live</span>
-        </div>
-        <div class="tagline">Geopolitica, Analisi Economiche e retroscena d'attualità indipendente</div>
-    </header>
-
-    <nav>
-        <a href="/">Home Quotidiano</a>
-        <a href="/sistema/telemetria">Stato Server</a>
-        <span style="color: var(--text-muted); margin-left: auto; font-size: 0.9rem;">Lettori attivi: <b>{{ metrics.active_readers }}</b></span>
-    </nav>
-
-    <div class="main-grid">
-        
-        <div class="column">
-            <div class="column-title">🚨 Ultim'Ora Live</div>
-            {% if breaking %}
-                {% for item in breaking %}
-                <div class="flash-box">
-                    <span style="color: var(--breaking-border); font-weight:800;">[{{ item.time }}]</span><br>
-                    <a href="/notizia/{{ item.id }}">{{ item.title }}</a>
-                </div>
-                {% endfor %}
-            {% else %}
-                <p style="color: var(--text-muted); font-size: 0.9rem;">In attesa di nuovi lanci dalle agenzie esterocentrati...</p>
-            {% endif %}
-        </div>
-
-        <div class="column">
-            <div class="column-title">📰 Primo Piano & Inchieste</div>
-            {% for item in normal %}
-            <div class="news-card">
-                <span class="category-tag">{{ item.category }}</span>
-                <h2 class="news-title"><a href="/notizia/{{ item.id }}">{{ item.title }}</a></h2>
-                <p class="news-summary">{{ item.summary }}</p>
-                <div class="news-meta">Pubblicato: {{ item.date }} alle {{ item.time }} | Letture: {{ item.views }}</div>
-            </div>
-            {% endfor %}
-            
-            {% if breaking %}
-                <div class="column-title" style="margin-top: 40px;">🔍 Focus di Approfondimento Strategico</div>
-                {% for item in breaking %}
-                <div class="news-card">
-                    <span class="category-tag" style="background:#fae8ff; color:var(--accent);">DOSSIER</span>
-                    <h2 class="news-title"><a href="/notizia/{{ item.id }}">{{ item.title }}</a></h2>
-                    <p class="news-summary">{{ item.summary }}</p>
-                    <div class="news-meta">Analisi del flusso delle ore {{ item.time }}</div>
-                </div>
-                {% endfor %}
-            {% endif %}
-        </div>
-
-        <div class="column">
-            <div class="column-title">📊 Parametri del Network</div>
-            <div class="widget">
-                <p style="margin-bottom: 8px;">Sistema: <span class="status-badge" style="background:#e0f2fe; color:#0369a1;">OPERATIVO</span></p>
-                <p>Visualizzazioni uniche: <b>{{ metrics.total_visits }}</b></p>
-            </div>
-            
-            <div class="column-title" style="margin-top: 25px;">💡 Linea Editoriale</div>
-            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; text-align: justify;">
-                Questo spazio copre l'intersezione tra le manovre bancarie globali, la logistica marittima e le informazioni geopolitiche trascurate dai canali televisivi commerciali tradizionali.
-            </p>
-        </div>
-
+<header>
+    <div class="header-main">
+        <h1>CHRONO<span>PANEL</span></h1>
+        <span class="status-badge">STABILE</span>
     </div>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/sistema/telemetria">Telemetria</a>
+    <span style="margin-left:auto;">Lettori: <b>{{ metrics.active_readers }}</b></span>
+</nav>
+
+<div class="main-grid">
+
+    <div class="column">
+        <div class="column-title">Ultim’ora</div>
+
+        {% for item in breaking %}
+        <div class="flash-box">
+            <b>{{ item.time }}</b><br>
+            <a href="/notizia/{{ item.id }}">{{ item.title }}</a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="column">
+        <div class="column-title">Notizie</div>
+
+        {% for item in normal %}
+        <div class="news-card">
+            <div><b>{{ item.category }}</b></div>
+            <h3 class="news-title">
+                <a href="/notizia/{{ item.id }}">{{ item.title }}</a>
+            </h3>
+            <p>{{ item.summary }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="column">
+        <div class="column-title">Sistema</div>
+
+        <p>Visite: <b>{{ metrics.total_visits }}</b></p>
+        <p>Server: <b>{{ metrics.server_status }}</b></p>
+    </div>
+
+</div>
 
 </body>
 </html>
