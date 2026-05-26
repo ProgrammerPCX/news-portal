@@ -68,7 +68,7 @@ def live_news_ticker_kernel():
     ]
     
     while True:
-        time.sleep(20)
+        time.sleep(900)
         with data_lock:
             item = random.choice(pool)
             if not any(n["title"] == item["title"] for n in NEWS_DATABASE):
